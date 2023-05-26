@@ -53,6 +53,7 @@ class FileDB extends DBBase {
 			const files = await fs.promises.readdir(pathToDB)
 
 			files.forEach(async (filename) => {
+				if (filename.startsWith(`.`)) { return }
 				const fullTableName = this.buildFullTableName(filename)
 				const fullTablePath = this.buildFullTablePath(filename)
 				const text = await this.readTableFromFile(fullTablePath)
