@@ -1,0 +1,99 @@
+
+
+{
+    "textResponse": [
+        {
+            "name": "Ping server.",
+            "verb": "GET",
+            "path": "/ping",
+            "handler": "text.js",
+            "log": "INFO",
+            "args": {
+                "text": "The server is running."
+            }
+        }
+    ],
+    "fileLoaders": [
+        {
+            "name": "FAV ICON.",
+            "verb": "GET",
+            "path": "/favicon.ico",
+            "handler": "file.js",
+            "log": "INFO",
+            "args": {
+                "file": "./images/favicon.ico"
+            }
+        },
+        {
+            "name": "Load Index file.",
+            "verb": "GET",
+            "path": "/",
+            "handler": "file.js",
+            "log": "INFO",
+            "args": {
+                "file": "./html/index.html"
+            }
+        },
+        {
+            "name": "Load Index file.",
+            "verb": "GET",
+            "path": "/index",
+            "handler": "file.js",
+            "log": "INFO",
+            "args": {
+                "file": "./html/index.html"
+            }
+        }
+    ],
+    "database": [
+        {
+            "name": "Get user information.",
+            "verb": "GET",
+            "path": "/user-info",
+            "handler": "db-select.js",
+            "log": "INFO",
+            "args": {
+                "table": "user"
+            }
+        },
+        {
+            "name": "Add user information.",
+            "verb": "POST",
+            "path": "/user-info",
+            "handler": "add-user.js",
+            "log": "INFO",
+            "args": {
+                "table": "user"
+            }
+        },
+        {
+            "name": "Update user information.",
+            "verb": "POST",
+            "path": "/user-info-update",
+            "handler": "update-user.js",
+            "log": "INFO",
+            "args": {
+                "table": "user"
+            }
+        },
+        {
+            "name": "Delete user information.",
+            "verb": "DELETE",
+            "path": "/user-info",
+            "handler": "db-delete.js",
+            "log": "INFO",
+            "args": {
+                "table": "user"
+            }
+        }
+    ],
+    "function": [
+        {
+            "name": "Login.",
+            "verb": "POST",
+            "path": "/login-attempt",
+            "handler": "login.js",
+            "log": "INFO"
+        }
+    ]
+}
